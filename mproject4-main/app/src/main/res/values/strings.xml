@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- App -->
+    <string name="app_name">HTD GYM</string>
+
+    <!-- Bottom Navigation / Main -->
+    <string name="home">Trang chủ</string>
+    <string name="members">Thành viên</string>
+    <string name="workouts">Tập luyện</string>
+    <string name="payments">Thanh toán</string>
+    <string name="equipment">Thiết bị</string>
+
+    <!-- Common actions -->
+    <string name="save">Lưu</string>
+    <string name="cancel">Hủy</string>
+    <string name="delete">Xóa</string>
+    <string name="edit">Sửa</string>
+
+    <!-- Add screens -->
+    <string name="add_member">Thêm thành viên</string>
+    <string name="add_workout">Thêm bài tập</string>
+    <string name="add_payment">Thêm thanh toán</string>
+    <string name="add_equipment">Thêm thiết bị</string>
+
+    <!-- AUTH -->
+    <string name="login">Đăng nhập</string>
+    <string name="register">Đăng ký</string>
+    <string name="forgot_password">Quên mật khẩu</string>
+
+    <!-- HOME -->
+    <string name="welcome_back">Chào mừng trở lại!</string>
+    <string name="admin">Admin</string>
+
+    <!-- Stats -->
+    <string name="stat_days">NGÀY LIÊN TIẾP</string>
+    <string name="stat_sessions">BUỔI TẬP</string>
+    <string name="stat_calories">CALO HÔM NAY</string>
+    <string name="stat_water">CỐC NƯỚC</string>
+
+    <!-- Workout -->
+    <string name="today_workout">Buổi tập hôm nay</string>
+    <string name="start_workout">Bắt đầu tập</string>
+
+    <!-- Menu -->
+    <string name="ai_coach">AI Coach</string>
+    <string name="community">Cộng đồng</string>
+    <string name="video">Video</string>
+
+    <!-- AI Coach -->
+    <string name="back">Quay lại</string>
+    <string name="ai_coach_desc">
+        Huấn luyện viên AI sẽ giúp bạn lên lịch tập, ăn uống và theo dõi tiến trình 💪
+    </string>
+
+    <!-- Community -->
+    <string name="community_title">Cộng đồng</string>
+    <string name="community_desc">Nơi chia sẻ, hỏi đáp và truyền cảm hứng tập luyện</string>
+
+    <!-- Video -->
+    <string name="video_title">Video tập luyện</string>
+    <string name="video_desc">Video hướng dẫn tập luyện cho mọi cấp độ</string>
+    <string name="ask_ai_coach">Hỏi AI Coach</string>
+
+</resources>

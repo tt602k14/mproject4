@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    
+    <!-- Robot head -->
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M12,2C10.9,2 10,2.9 10,4H14C14,2.9 13.1,2 12,2Z"/>
+    
+    <!-- Robot body -->
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M18,8H6C4.9,8 4,8.9 4,10V18C4,19.1 4.9,20 6,20H18C19.1,20 20,19.1 20,18V10C20,8.9 19.1,8 18,8ZM9,17H7V15H9V17ZM9,13H7V11H9V13ZM17,17H15V15H17V17ZM17,13H15V11H17V13Z"/>
+    
+    <!-- Antenna -->
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M12,4V6"/>
+    
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M12,6m-1,0a1,1 0,1 1,2 0a1,1 0,1 1,-2 0"/>
+</vector>
