@@ -210,7 +210,7 @@ public class WorkoutDetailActivity extends BaseActivity {
         addExerciseSet("Nâng tay ngang", "3 x 15 lần", "Nâng tay ra hai bên đến ngang vai", "https://youtu.be/XPPfnSEATJA");
         addExerciseSet("Nâng tay trước", "3 x 15 lần", "Nâng tay lên phía trước", "https://youtu.be/hRJ6tR5-if0");
         addExerciseSet("Đẩy vai", "4 x 12 lần", "Đẩy tạ hoặc chai nước lên trên đầu", "https://www.youtube.com/shorts/ZICoJhVzFCc?feature=share");
-        addExerciseSet("Giãn cơ vai", "2 x 30 giây", "Các động tác giãn vai", "https://youtu.be/5Qv2T8VusME");
+        addExerciseSet("Giãn cơ vai", "2 x 30 giây", "Các động tác giãn vai", "https://youtu.be/kbAes2QDMXM");
     }
 
     private void loadLegsExercises() {
@@ -223,7 +223,7 @@ public class WorkoutDetailActivity extends BaseActivity {
         addExerciseSet("Gánh đùi Bulgaria", "3 x 12 lần/chân", "Một chân lên ghế, chân kia squat", "https://www.youtube.com/shorts/AaKASiVCZP4?feature=share");
         addExerciseSet("Nâng mông", "4 x 15 lần", "Nằm ngửa, nâng hông lên cao", "https://www.youtube.com/shorts/39NOLur3pSs?feature=share");
         addExerciseSet("Bước lên bậc", "3 x 15 lần/chân", "Bước lên ghế hoặc bậc thang", "https://www.youtube.com/shorts/htUOXeEZUiI?feature=share");
-        addExerciseSet("Giãn cơ chân", "2 x 30 giây", "Các động tác giãn chân", "https://youtu.be/5Qv2T8VusME");
+        addExerciseSet("Giãn cơ chân", "2 x 30 giây", "Các động tác giãn chân", "https://youtu.be/g_tea8ZNk5A");
     }
 
     private void loadAbsExercises() {
@@ -235,12 +235,12 @@ public class WorkoutDetailActivity extends BaseActivity {
         addExerciseSet("Leo núi", "3 x 30 giây", "Tư thế plank, kéo đầu gối lên ngực", "https://youtu.be/nmwgirgXLYM");
         addExerciseSet("Plank nghiêng", "2 x 45 giây/bên", "Plank nghiêng sang một bên", "https://www.youtube.com/shorts/vLtwnh-X82s?feature=share");
         addExerciseSet("Đá chân nhanh", "3 x 30 giây", "Nằm ngửa, đá chân lên xuống", "https://www.youtube.com/shorts/dottsAhnC3w?feature=share");
-        addExerciseSet("Giãn cơ bụng", "2 x 30 giây", "Các động tác giãn bụng", "https://youtu.be/5Qv2T8VusME");
+        addExerciseSet("Giãn cơ bụng", "2 x 30 giây", "Các động tác giãn bụng", "https://youtu.be/7Rl_E7L7rQY");
     }
 
     private void loadBackExercises() {
         addExerciseSet("Tư thế siêu nhân", "4 x 15 lần", "Nằm sấp, nâng tay chân lên cao", "https://youtu.be/7SLbUk-qTTM");
-        addExerciseSet("Duỗi lưng", "3 x 15 lần", "Nằm sấp, nâng thân người lên", "https://youtu.be/cc7kIfSUWEY");
+        addExerciseSet("Duỗi lưng", "3 x 15 lần", "Nằm sấp, nâng thân người lên", "https://youtu.be/RqcOCBb4arc");
         addExerciseSet("Thiên thần ngược", "3 x 12 lần", "Nằm sấp, vẫy tay như thiên thần", "https://youtu.be/LbTx6Y4ALZ0");
         addExerciseSet("Nâng tay chữ Y", "3 x 12 lần", "Nằm sấp, nâng tay tạo hình chữ Y", "https://www.youtube.com/shorts/iK22GwXJji0?feature=share");
         addExerciseSet("Nâng tay chữ T", "3 x 12 lần", "Nằm sấp, nâng tay tạo hình chữ T", "https://www.youtube.com/shorts/i-jEU2pBdzM?feature=share");

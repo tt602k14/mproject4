@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1A1A1A">
+    android:background="@drawable/gradient_header">
 
     <!-- Video Preview Area -->
     <RelativeLayout
@@ -20,23 +20,28 @@
             android:scaleType="centerCrop"
             android:background="#2A2A2A" />
 
-        <!-- Play Video Button -->
+        <!-- Play Video Button with Gradient -->
         <androidx.cardview.widget.CardView
             android:id="@+id/btn_play_video"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_centerInParent="true"
             app:cardCornerRadius="40dp"
-            app:cardElevation="8dp"
-            app:cardBackgroundColor="#6FCF97">
+            app:cardElevation="8dp">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="▶"
-                android:textColor="#FFFFFF"
-                android:textSize="32sp"
-                android:gravity="center" />
+                android:background="@drawable/gradient_card_2"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="▶"
+                    android:textColor="#FFFFFF"
+                    android:textSize="32sp" />
+            </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <!-- Close Button -->
@@ -52,7 +57,7 @@
             android:background="?attr/selectableItemBackgroundBorderless" />
     </RelativeLayout>
 
-    <!-- Exercise Info Card -->
+    <!-- Exercise Info Card with Gradient -->
     <androidx.cardview.widget.CardView
         android:id="@+id/card_exercise_info"
         android:layout_width="match_parent"
@@ -62,13 +67,13 @@
         android:layout_marginEnd="16dp"
         android:layout_marginTop="-40dp"
         app:cardCornerRadius="20dp"
-        app:cardElevation="8dp"
-        app:cardBackgroundColor="#FFFFFF">
+        app:cardElevation="8dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:background="@drawable/gradient_card_1"
             android:padding="24dp">
 
             <!-- Exercise Name -->
@@ -77,7 +82,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Hít đất"
-                android:textColor="#1A1A1A"
+                android:textColor="#FFFFFF"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 android:gravity="center" />
@@ -88,7 +93,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="3 hiệp x 15 lần"
-                android:textColor="#666666"
+                android:textColor="#FFFFFF"
                 android:textSize="16sp"
                 android:gravity="center"
                 android:layout_marginTop="8dp" />
@@ -99,7 +104,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="00:30"
-                android:textColor="#6FCF97"
+                android:textColor="#FFFFFF"
                 android:textSize="64sp"
                 android:textStyle="bold"
                 android:gravity="center"
@@ -114,8 +119,9 @@
                 android:layout_height="8dp"
                 android:max="100"
                 android:progress="0"
-                android:progressTint="#6FCF97"
-                android:progressBackgroundTint="#E0E0E0" />
+                android:progressTint="#FFFFFF"
+                android:progressBackgroundTint="#FFFFFF"
+                android:alpha="0.5" />
 
             <!-- Exercise Counter -->
             <TextView
@@ -123,7 +129,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Bài tập 1/8"
-                android:textColor="#999999"
+                android:textColor="#FFFFFF"
                 android:textSize="14sp"
                 android:gravity="center"
                 android:layout_marginTop="16dp" />
@@ -161,23 +167,28 @@
                 android:gravity="center" />
         </androidx.cardview.widget.CardView>
 
-        <!-- Play/Pause Button -->
+        <!-- Play/Pause Button with Gradient -->
         <androidx.cardview.widget.CardView
             android:id="@+id/btn_play_pause"
             android:layout_width="80dp"
             android:layout_height="80dp"
             app:cardCornerRadius="40dp"
-            app:cardElevation="8dp"
-            app:cardBackgroundColor="#6FCF97">
+            app:cardElevation="8dp">
 
-            <TextView
-                android:id="@+id/tv_play_pause"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="▶"
-                android:textColor="#FFFFFF"
-                android:textSize="32sp"
-                android:gravity="center" />
+                android:background="@drawable/gradient_card_2"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tv_play_pause"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="▶"
+                    android:textColor="#FFFFFF"
+                    android:textSize="32sp" />
+            </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <!-- Next Button -->
@@ -212,7 +223,7 @@
         android:orientation="horizontal"
         android:gravity="center">
 
-        <!-- Rest Button -->
+        <!-- Rest Button with Gradient -->
         <androidx.cardview.widget.CardView
             android:id="@+id/btn_rest"
             android:layout_width="0dp"
@@ -220,13 +231,13 @@
             android:layout_weight="1"
             android:layout_marginEnd="8dp"
             app:cardCornerRadius="28dp"
-            app:cardElevation="4dp"
-            app:cardBackgroundColor="#FF9800">
+            app:cardElevation="4dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
+                android:background="@drawable/gradient_card_3"
                 android:gravity="center">
 
                 <TextView
@@ -247,7 +258,7 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Exit Button -->
+        <!-- Exit Button with Gradient -->
         <androidx.cardview.widget.CardView
             android:id="@+id/btn_exit"
             android:layout_width="0dp"
@@ -255,13 +266,13 @@
             android:layout_weight="1"
             android:layout_marginStart="8dp"
             app:cardCornerRadius="28dp"
-            app:cardElevation="4dp"
-            app:cardBackgroundColor="#F44336">
+            app:cardElevation="4dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
+                android:background="@drawable/gradient_card_1"
                 android:gravity="center">
 
                 <TextView

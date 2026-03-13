@@ -15,17 +15,19 @@ import androidx.cardview.widget.CardView;
 
 import com.htdgym.app.R;
 import com.htdgym.app.activities.BaseActivity;
+import com.htdgym.app.dialogs.ThemeDialog;
+import com.htdgym.app.utils.ThemeHelper;
 
 public class SettingsActivity extends BaseActivity {
 
     private ImageView btnBack;
-    private LinearLayout btnAge, btnHeight, btnWeight, btnLanguage, btnMusic;
+    private LinearLayout btnAge, btnHeight, btnWeight, btnLanguage, btnMusic, btnTheme;
     private LinearLayout btnAchievements, btnTrainingHistory, btnRestorePurchase;
     private LinearLayout btnShareApp, btnRateApp, btnContactSupport;
     private CardView btnLogout;
     
     private TextView tvAgeValue, tvHeightValue, tvWeightValue;
-    private TextView tvLanguageValue, tvMusicValue;
+    private TextView tvLanguageValue, tvMusicValue, tvThemeValue;
     
     private SharedPreferences prefs;
 
@@ -55,8 +57,10 @@ public class SettingsActivity extends BaseActivity {
         // Cài đặt section
         btnLanguage = findViewById(R.id.btn_language);
         btnMusic = findViewById(R.id.btn_music);
+        btnTheme = findViewById(R.id.btn_theme);
         tvLanguageValue = findViewById(R.id.tv_language_value);
         tvMusicValue = findViewById(R.id.tv_music_value);
+        tvThemeValue = findViewById(R.id.tv_theme_value);
         
         btnAchievements = findViewById(R.id.btn_achievements);
         btnTrainingHistory = findViewById(R.id.btn_training_history);
@@ -77,12 +81,14 @@ public class SettingsActivity extends BaseActivity {
         int weight = prefs.getInt("user_weight", 70);
         String language = prefs.getString("user_language", "Tiếng Việt");
         String music = prefs.getString("user_music", "My Life");
+        int themeMode = ThemeHelper.getThemeMode(this);
         
         tvAgeValue.setText(String.valueOf(age));
         tvHeightValue.setText(height + " cm");
         tvWeightValue.setText(weight + " kg");
         tvLanguageValue.setText(language);
         tvMusicValue.setText(music);
+        tvThemeValue.setText(ThemeHelper.getThemeModeName(this, themeMode));
     }
 
     private void setupClickListeners() {
@@ -96,6 +102,7 @@ public class SettingsActivity extends BaseActivity {
         // Cài đặt section
         btnLanguage.setOnClickListener(v -> showLanguageDialog());
         btnMusic.setOnClickListener(v -> showMusicDialog());
+        btnTheme.setOnClickListener(v -> showThemeDialog());
         
         btnAchievements.setOnClickListener(v -> 
             Toast.makeText(this, "Tính năng đang phát triển", Toast.LENGTH_SHORT).show());
@@ -188,6 +195,17 @@ public class SettingsActivity extends BaseActivity {
                 Toast.makeText(this, "Âm nhạc: " + music, Toast.LENGTH_SHORT).show();
             })
             .show();
+    }
+
+    private void showThemeDialog() {
+        ThemeDialog dialog = new ThemeDialog(this);
+        dialog.show();
+        
+        // Update theme value after dialog closes
+        dialog.setOnDismissListener(d -> {
+            int themeMode = ThemeHelper.getThemeMode(this);
+            tvThemeValue.setText(ThemeHelper.getThemeModeName(this, themeMode));
+        });
     }
 
     private void showClearHistoryDialog() {
