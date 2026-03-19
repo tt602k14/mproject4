@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <!-- Initial View - Just Image and Text -->
+    <LinearLayout
+        android:id="@+id/layout_initial"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:clickable="true"
+        android:focusable="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tiếng Việt"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chọn ngôn ngữ 👍"
+            android:textColor="#000000"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp" />
+
+        <!-- Exercise Image Placeholder -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_marginTop="60dp"
+            android:scaleType="centerInside"
+            android:contentDescription="Exercise demo" />
+
+    </LinearLayout>
+
+    <!-- Language Selection View - Hidden Initially -->
+    <LinearLayout
+        android:id="@+id/layout_language_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#F5F5F5"
+        android:visibility="gone">
+
+        <!-- Header with Done Button -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Tiếng Việt"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/btn_done"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:text="Done"
+                android:textColor="#4CAF50"
+                android:textSize="16sp"
+                android:padding="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Chọn ngôn ngữ 👍"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Exercise Image -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:scaleType="centerInside"
+            android:contentDescription="Exercise demo"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Language Options -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <RadioGroup
+                android:id="@+id/radio_group_languages"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="32dp"
+                android:paddingVertical="16dp">
+
+                <RadioButton
+                    android:id="@+id/radio_french"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="Français"
+                    android:textSize="16sp"
+                    android:textColor="#000000"
+                    android:paddingStart="16dp"
+                    android:background="@android:color/transparent" />
+
+                <RadioButton
+                    android:id="@+id/radio_german"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="Deutsch"
+                    android:textSize="16sp"
+                    android:textColor="#000000"
+                    android:paddingStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@android:color/transparent" />
+
+                <RadioButton
+                    android:id="@+id/radio_spanish"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="Español"
+                    android:textSize="16sp"
+                    android:textColor="#000000"
+                    android:paddingStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@android:color/transparent" />
+
+                <RadioButton
+                    android:id="@+id/radio_portuguese"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="Português"
+                    android:textSize="16sp"
+                    android:textColor="#000000"
+                    android:paddingStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@android:color/transparent" />
+
+                <RadioButton
+                    android:id="@+id/radio_chinese"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="中文"
+                    android:textSize="16sp"
+                    android:textColor="#000000"
+                    android:paddingStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@android:color/transparent" />
+
+                <RadioButton
+                    android:id="@+id/radio_russian"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="Русский язык"
+                    android:textSize="16sp"
+                    android:textColor="#000000"
+                    android:paddingStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@android:color/transparent" />
+
+                <RadioButton
+                    android:id="@+id/radio_vietnamese"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="Tiếng Việt"
+                    android:textSize="16sp"
+                    android:textColor="#000000"
+                    android:paddingStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:checked="true"
+                    android:background="@android:color/transparent" />
+
+            </RadioGroup>
+        </ScrollView>
+    </LinearLayout>
+
+</RelativeLayout>

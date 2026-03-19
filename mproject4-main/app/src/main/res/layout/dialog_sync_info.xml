@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@drawable/gradient_card_2">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="☁️"
+            android:textSize="24sp"
+            android:layout_marginEnd="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đồng bộ hóa tài khoản"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <!-- Sync Status -->
+    <TextView
+        android:id="@+id/tv_sync_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Trạng thái: Đã đồng bộ"
+        android:textColor="#4CAF50"
+        android:textSize="14sp"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Device ID -->
+    <TextView
+        android:id="@+id/tv_device_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thiết bị: HTDGym_123456"
+        android:textColor="#B0B0B0"
+        android:textSize="12sp"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Last Sync Time -->
+    <TextView
+        android:id="@+id/tv_last_sync"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lần cuối: 2 giờ trước"
+        android:textColor="#B0B0B0"
+        android:textSize="12sp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Description -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tài khoản của bạn được đồng bộ hóa tự động giữa các thiết bị. Bạn có thể đăng nhập từ bất kỳ thiết bị nào với cùng thông tin đăng nhập."
+        android:textColor="#E0E0E0"
+        android:textSize="14sp"
+        android:lineSpacingExtra="4dp"
+        android:layout_marginBottom="20dp" />
+
+    <!-- Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end">
+
+        <Button
+            android:id="@+id/btn_sync_now"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đồng bộ ngay"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#4CAF50"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/btn_close_sync"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đóng"
+            android:textColor="#B0B0B0"
+            android:backgroundTint="#3C3C3C" />
+
+    </LinearLayout>
+
+</LinearLayout>

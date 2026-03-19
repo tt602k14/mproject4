@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark Theme Colors -->
+    <color name="dark_background">#121212</color>
+    <color name="background_dark">#2C2C2C</color>
+    <color name="dark_card">#1E1E1E</color>
+    <color name="darker">#0A0A0A</color>
+
+    <!-- Primary Colors -->
+    <color name="primary">#4CAF50</color>
+    <color name="colorPrimary">#4CAF50</color>
+    <color name="colorPrimaryDark">#388E3C</color>
+    <color name="colorAccent">#2196F3</color>
+    <color name="primary_dark">#388E3C</color>
+    <color name="primary_darker">#2E7D32</color>
+    <color name="secondary">#FF9800</color>
+    <color name="accent">#2196F3</color>
+    <color name="accent_dark">#1976D2</color>
+    <color name="danger">#f44336</color>
+    <color name="warning">#FFC107</color>
+
+    <!-- Text Colors -->
+    <color name="white">#FFFFFF</color>
+    <color name="gray">#B0B0B0</color>
+    <color name="gray_dark">#3C3C3C</color>
+    <color name="gray_light">#AAAAAA</color>
+    <color name="text_primary_dark">#FFFFFF</color>
+    <color name="text_secondary_dark">#B0B0B0</color>
+    <color name="status_bar_dark">#000000</color>
+
+    <!-- Additional Colors -->
+    <color name="border">#333333</color>
+    <color name="primary_light">#E8F5E9</color>
+    <color name="green_primary">#4CAF50</color>
+    
+    <!-- Premium Colors -->
+    <color name="premium_gold">#FFD700</color>
+    <color name="premium_gold_dark">#FFA000</color>
+    <color name="premium_gold_light">#FFECB3</color>
+    <color name="premium_highlight">#FFF8E1</color>
+    
+    <!-- Common Colors -->
+    <color name="background_color">#F5F5F5</color>
+    <color name="card_background">#FFFFFF</color>
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="secondary_light">#FFE0B2</color>
+
+</resources>

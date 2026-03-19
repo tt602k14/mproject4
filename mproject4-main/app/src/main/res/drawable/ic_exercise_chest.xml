@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    
+    <!-- Background circle -->
+    <path
+        android:fillColor="#E8F5E8"
+        android:pathData="M24,24m-20,0a20,20 0,1 1,40 0a20,20 0,1 1,-40 0" />
+    
+    <!-- Chest/Push-up icon -->
+    <path
+        android:fillColor="#4CAF50"
+        android:pathData="M12,20c0,-2 2,-4 4,-4h16c2,0 4,2 4,4v8c0,2 -2,4 -4,4H16c-2,0 -4,-2 -4,-4V20z" />
+    
+    <!-- Arms -->
+    <path
+        android:fillColor="#388E3C"
+        android:pathData="M8,18h8v4H8z" />
+    <path
+        android:fillColor="#388E3C"
+        android:pathData="M32,18h8v4h-8z" />
+    
+    <!-- Center line -->
+    <path
+        android:fillColor="#2E7D32"
+        android:pathData="M23,18h2v8h-2z" />
+</vector>

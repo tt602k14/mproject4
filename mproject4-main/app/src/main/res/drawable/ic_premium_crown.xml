@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    
+    <path
+        android:fillColor="#FFD700"
+        android:pathData="M12,6L15.13,12.74L22,11.74L18.5,18H5.5L2,11.74L8.87,12.74L12,6Z" />
+    
+    <path
+        android:fillColor="#FFD700"
+        android:pathData="M5,19H19V21H5V19Z" />
+    
+    <!-- Crown jewels as paths instead of circles -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M12,12.5C13.38,12.5 14.5,13.62 14.5,15C14.5,16.38 13.38,17.5 12,17.5C10.62,17.5 9.5,16.38 9.5,15C9.5,13.62 10.62,12.5 12,12.5Z" />
+    
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M8,14C8.55,14 9,14.45 9,15C9,15.55 8.55,16 8,16C7.45,16 7,15.55 7,15C7,14.45 7.45,14 8,14Z" />
+    
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M16,14C16.55,14 17,14.45 17,15C17,15.55 16.55,16 16,16C15.45,16 15,15.55 15,15C15,14.45 15.45,14 16,14Z" />
+        
+</vector>

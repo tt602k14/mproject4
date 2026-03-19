@@ -1,0 +1,176 @@
+package com.htdgym.app.models;
+
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "exercises")
+public class Exercise {
+
+    @PrimaryKey(autoGenerate = true)
+    private int id;
+
+    private String name;
+    private int sets;
+    private int reps;
+    private int weight;
+    private String muscleGroup;
+    private String restTime;
+    private String setsReps; // New field for sets×reps format
+    private String iconColor;
+    private String difficulty;
+    private boolean isFavorite = false;
+    private String videoUrl; // YouTube video URL for exercise demonstration
+    private String thumbnailUrl; // Thumbnail image URL
+
+    // Default constructor for Room
+    public Exercise() {}
+
+    // Constructor for database operations
+    @Ignore
+    public Exercise(String name, int sets, int reps, int weight) {
+        this.name = name;
+        this.sets = sets;
+        this.reps = reps;
+        this.weight = weight;
+    }
+
+    // Constructor for workout library (backward compatibility)
+    @Ignore
+    public Exercise(String name, String muscleGroup, String setsReps, String restTime, 
+                   String iconColor, String difficulty) {
+        this.name = name;
+        this.muscleGroup = muscleGroup;
+        this.setsReps = setsReps;
+        this.restTime = restTime;
+        this.iconColor = iconColor;
+        this.difficulty = difficulty;
+        this.videoUrl = "https://youtu.be/-R5sH2iG9Gw"; // Default video URL
+    }
+
+    // Constructor for workout library with video URL
+    @Ignore
+    public Exercise(String name, String muscleGroup, String setsReps, String restTime, 
+                   String iconColor, String difficulty, String videoUrl) {
+        this.name = name;
+        this.muscleGroup = muscleGroup;
+        this.setsReps = setsReps;
+        this.restTime = restTime;
+        this.iconColor = iconColor;
+        this.difficulty = difficulty;
+        this.videoUrl = videoUrl;
+    }
+
+    // ===== Getter / Setter =====
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+    
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getSets() {
+        return sets;
+    }
+    
+    public void setSets(int sets) {
+        this.sets = sets;
+    }
+
+    public int getReps() {
+        return reps;
+    }
+    
+    public void setReps(int reps) {
+        this.reps = reps;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+    
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+    public String getMuscleGroup() {
+        return muscleGroup;
+    }
+
+    public void setMuscleGroup(String muscleGroup) {
+        this.muscleGroup = muscleGroup;
+    }
+
+    public String getRestTime() {
+        return restTime;
+    }
+
+    public void setRestTime(String restTime) {
+        this.restTime = restTime;
+    }
+    
+    public String getSetsReps() {
+        return setsReps;
+    }
+    
+    public void setSetsReps(String setsReps) {
+        this.setsReps = setsReps;
+    }
+    
+    // Method to get formatted sets×reps string
+    public String getFormattedSetsReps() {
+        if (setsReps != null) {
+            return setsReps;
+        }
+        return sets + "×" + reps;
+    }
+
+    public String getIconColor() {
+        return iconColor;
+    }
+
+    public void setIconColor(String iconColor) {
+        this.iconColor = iconColor;
+    }
+
+    public String getDifficulty() {
+        return difficulty;
+    }
+
+    public void setDifficulty(String difficulty) {
+        this.difficulty = difficulty;
+    }
+    
+    public boolean isFavorite() {
+        return isFavorite;
+    }
+    
+    public void setFavorite(boolean favorite) {
+        this.isFavorite = favorite;
+    }
+    
+    public String getVideoUrl() {
+        return videoUrl;
+    }
+    
+    public void setVideoUrl(String videoUrl) {
+        this.videoUrl = videoUrl;
+    }
+    
+    public String getThumbnailUrl() {
+        return thumbnailUrl;
+    }
+    
+    public void setThumbnailUrl(String thumbnailUrl) {
+        this.thumbnailUrl = thumbnailUrl;
+    }
+}

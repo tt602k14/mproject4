@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- App -->
+    <string name="app_name">HTD GYM</string>
+
+    <!-- Bottom Navigation / Main -->
+    <string name="home">Home</string>
+    <string name="members">Members</string>
+    <string name="workouts">Workouts</string>
+    <string name="payments">Payments</string>
+    <string name="equipment">Equipment</string>
+
+    <!-- Common actions -->
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+
+    <!-- Add screens -->
+    <string name="add_member">Add Member</string>
+    <string name="add_workout">Add Workout</string>
+    <string name="add_payment">Add Payment</string>
+    <string name="add_equipment">Add Equipment</string>
+
+    <!-- AUTH -->
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="forgot_password">Forgot Password</string>
+
+    <!-- HOME -->
+    <string name="welcome_back">Welcome Back!</string>
+    <string name="admin">Admin</string>
+
+    <!-- Stats -->
+    <string name="stat_days">STREAK DAYS</string>
+    <string name="stat_sessions">SESSIONS</string>
+    <string name="stat_calories">TODAY CALORIES</string>
+    <string name="stat_water">WATER CUPS</string>
+
+    <!-- Workout -->
+    <string name="today_workout">Today\'s Workout</string>
+    <string name="start_workout">Start Workout</string>
+
+    <!-- Menu -->
+    <string name="ai_coach">AI Coach</string>
+    <string name="community">Community</string>
+    <string name="video">Video</string>
+
+</resources>
