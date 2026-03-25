@@ -22,6 +22,18 @@ public class Exercise {
     private boolean isFavorite = false;
     private String videoUrl; // YouTube video URL for exercise demonstration
     private String thumbnailUrl; // Thumbnail image URL
+    
+    // Additional fields for WorkoutsFragment compatibility
+    private String description;
+    private String category;
+    private int duration;
+    private int calories;
+    private String equipment;
+    private String targetMuscles;
+    private float rating;
+    private int ratingCount;
+    private int completedCount;
+    private boolean isPremium;
 
     // Default constructor for Room
     public Exercise() {}
@@ -48,7 +60,21 @@ public class Exercise {
         this.videoUrl = "https://youtu.be/-R5sH2iG9Gw"; // Default video URL
     }
 
-    // Constructor for workout library with video URL
+    // Constructor for workout library with video URL and thumbnail
+    @Ignore
+    public Exercise(String name, String muscleGroup, String setsReps, String restTime, 
+                   String iconColor, String difficulty, String videoUrl, String thumbnailUrl) {
+        this.name = name;
+        this.muscleGroup = muscleGroup;
+        this.setsReps = setsReps;
+        this.restTime = restTime;
+        this.iconColor = iconColor;
+        this.difficulty = difficulty;
+        this.videoUrl = videoUrl;
+        this.thumbnailUrl = thumbnailUrl;
+    }
+
+    // Constructor for workout library with video URL (7 parameters - backward compatibility)
     @Ignore
     public Exercise(String name, String muscleGroup, String setsReps, String restTime, 
                    String iconColor, String difficulty, String videoUrl) {
@@ -59,6 +85,56 @@ public class Exercise {
         this.iconColor = iconColor;
         this.difficulty = difficulty;
         this.videoUrl = videoUrl;
+        // Auto-generate thumbnail URL from video URL
+        if (videoUrl != null && videoUrl.contains("youtu")) {
+            String videoId = extractVideoId(videoUrl);
+            if (videoId != null) {
+                this.thumbnailUrl = "https://i.ytimg.com/vi/" + videoId + "/hqdefault.jpg";
+            }
+        }
+    }
+
+    // Constructor for WorkoutsFragment (7 parameters)
+    @Ignore
+    public Exercise(String name, String description, String category, String difficulty, 
+                   int duration, int calories, String videoUrl) {
+        this.name = name;
+        this.description = description;
+        this.muscleGroup = category;
+        this.category = category;
+        this.difficulty = difficulty;
+        this.duration = duration;
+        this.calories = calories;
+        this.videoUrl = videoUrl;
+        // Generate thumbnail URL from video URL
+        if (videoUrl != null && videoUrl.contains("youtu")) {
+            String videoId = extractVideoId(videoUrl);
+            if (videoId != null) {
+                this.thumbnailUrl = "https://i.ytimg.com/vi/" + videoId + "/hqdefault.jpg";
+            }
+        }
+    }
+
+    // Constructor for WorkoutsFragment with premium flag (8 parameters)
+    @Ignore
+    public Exercise(String name, String description, String category, String difficulty, 
+                   int duration, int calories, String videoUrl, boolean isPremium) {
+        this.name = name;
+        this.description = description;
+        this.muscleGroup = category;
+        this.category = category;
+        this.difficulty = difficulty;
+        this.duration = duration;
+        this.calories = calories;
+        this.videoUrl = videoUrl;
+        this.isPremium = isPremium;
+        // Generate thumbnail URL from video URL
+        if (videoUrl != null && videoUrl.contains("youtu")) {
+            String videoId = extractVideoId(videoUrl);
+            if (videoId != null) {
+                this.thumbnailUrl = "https://i.ytimg.com/vi/" + videoId + "/hqdefault.jpg";
+            }
+        }
     }
 
     // ===== Getter / Setter =====
@@ -172,5 +248,117 @@ public class Exercise {
     
     public void setThumbnailUrl(String thumbnailUrl) {
         this.thumbnailUrl = thumbnailUrl;
+    }
+    
+    // Additional getters and setters for WorkoutsFragment compatibility
+    public String getDescription() {
+        return description;
+    }
+    
+    public void setDescription(String description) {
+        this.description = description;
+    }
+    
+    public String getCategory() {
+        return category != null ? category : muscleGroup;
+    }
+    
+    public void setCategory(String category) {
+        this.category = category;
+    }
+    
+    public int getDuration() {
+        return duration;
+    }
+    
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
+    
+    public int getCalories() {
+        return calories;
+    }
+    
+    public void setCalories(int calories) {
+        this.calories = calories;
+    }
+    
+    public String getEquipment() {
+        return equipment;
+    }
+    
+    public void setEquipment(String equipment) {
+        this.equipment = equipment;
+    }
+    
+    public String getTargetMuscles() {
+        return targetMuscles;
+    }
+    
+    public void setTargetMuscles(String targetMuscles) {
+        this.targetMuscles = targetMuscles;
+    }
+    
+    public float getRating() {
+        return rating;
+    }
+    
+    public void setRating(float rating) {
+        this.rating = rating;
+    }
+    
+    public int getRatingCount() {
+        return ratingCount;
+    }
+    
+    public void setRatingCount(int ratingCount) {
+        this.ratingCount = ratingCount;
+    }
+    
+    public int getCompletedCount() {
+        return completedCount;
+    }
+    
+    public void setCompletedCount(int completedCount) {
+        this.completedCount = completedCount;
+    }
+    
+    public boolean isPremium() {
+        return isPremium;
+    }
+    
+    public void setPremium(boolean premium) {
+        isPremium = premium;
+    }
+    
+    // Helper method to extract video ID from YouTube URL
+    private String extractVideoId(String youtubeUrl) {
+        if (youtubeUrl == null || youtubeUrl.isEmpty()) return null;
+        
+        // Handle youtu.be format
+        if (youtubeUrl.contains("youtu.be/")) {
+            String[] parts = youtubeUrl.split("youtu.be/");
+            if (parts.length > 1) {
+                String videoId = parts[1];
+                if (videoId.contains("?")) {
+                    videoId = videoId.split("\\?")[0];
+                }
+                return videoId;
+            }
+        }
+        
+        // Handle youtube.com format
+        if (youtubeUrl.contains("watch?v=")) {
+            String[] parts = youtubeUrl.split("watch\\?v=");
+            if (parts.length > 1) {
+                String videoId = parts[1];
+                if (videoId.contains("&")) {
+                    videoId = videoId.split("&")[0];
+                }
+                return videoId;
+            }
+        }
+        
+        return null;
     }
 }

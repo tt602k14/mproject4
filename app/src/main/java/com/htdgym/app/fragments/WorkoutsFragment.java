@@ -210,7 +210,8 @@ public class WorkoutsFragment extends Fragment {
         thumbnailImage.setLayoutParams(new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
         thumbnailImage.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        com.htdgym.app.utils.YouTubeThumbnailHelper.loadThumbnail(this, thumbnailImage, videoUrl);
+        // Load thumbnail using ThumbnailManager for better fallback support
+        com.htdgym.app.utils.ThumbnailManager.loadThumbnail(requireContext(), thumbnailImage, title, videoUrl);
         iconCard.addView(thumbnailImage);
 
         // Info

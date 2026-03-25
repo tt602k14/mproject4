@@ -19,20 +19,20 @@ public class Program45DaysManager {
         // TUẦN 1-2: CƠ BẢN (Ngày 1-14)
         // Ngày 1, 3, 5, 8, 10, 12
         exercises.add(new Exercise("Ngày 1: Khởi động vai", "shoulder", "3×10", "45s", "#4ECDC4", "Dễ", "https://youtu.be/1We3zKXj_uA"));
-        exercises.add(new Exercise("Ngày 2: Nghỉ ngơi", "rest", "Nghỉ", "0s", "#E0E0E0", "Nghỉ", ""));
+        exercises.add(new Exercise("Ngày 2: Nghỉ ngơi", "rest", "Nghỉ", "0s", "#E0E0E0", "Nghỉ", "https://youtu.be/ZToicYcHIOU"));
         exercises.add(new Exercise("Ngày 3: Vòng tay cơ bản", "shoulder", "3×15", "30s", "#4ECDC4", "Dễ", "https://youtu.be/5Qv2T8VusME"));
-        exercises.add(new Exercise("Ngày 4: Nghỉ ngơi", "rest", "Nghỉ", "0s", "#E0E0E0", "Nghỉ", ""));
+        exercises.add(new Exercise("Ngày 4: Nghỉ ngơi", "rest", "Nghỉ", "0s", "#E0E0E0", "Nghỉ", "https://youtu.be/v7AYKMP6rOE"));
         exercises.add(new Exercise("Ngày 5: Nâng tay ngang", "shoulder", "3×12", "45s", "#4ECDC4", "Dễ", "https://youtu.be/3VcKaXpzqRo"));
-        exercises.add(new Exercise("Ngày 6: Nghỉ ngơi", "rest", "Nghỉ", "0s", "#E0E0E0", "Nghỉ", ""));
-        exercises.add(new Exercise("Ngày 7: Nghỉ ngơi", "rest", "Nghỉ", "0s", "#E0E0E0", "Nghỉ", ""));
+        exercises.add(new Exercise("Ngày 6: Nghỉ ngơi", "rest", "Nghỉ", "0s", "#E0E0E0", "Nghỉ", "https://youtu.be/1ZYbU82GVz4"));
+        exercises.add(new Exercise("Ngày 7: Nghỉ ngơi", "rest", "Nghỉ", "0s", "#E0E0E0", "Nghỉ", "https://youtu.be/COp7BR_Dvps"));
         
         exercises.add(new Exercise("Ngày 8: Hít đất vai", "shoulder", "3×8", "60s", "#4ECDC4", "Trung bình", "https://youtu.be/d1HZBdD0idE"));
-        exercises.add(new Exercise("Ngày 9: Nghỉ ngơi", "rest", "Nghỉ", "0s", "#E0E0E0", "Nghỉ", ""));
+        exercises.add(new Exercise("Ngày 9: Nghỉ ngơi", "rest", "Nghỉ", "0s", "#E0E0E0", "Nghỉ", "https://youtu.be/inpok4MKVLM"));
         exercises.add(new Exercise("Ngày 10: Nâng tay trước", "shoulder", "3×15", "45s", "#4ECDC4", "Dễ", "https://youtu.be/qM5X-_FfCQE"));
-        exercises.add(new Exercise("Ngày 11: Nghỉ ngơi", "rest", "Nghỉ", "0s", "#E0E0E0", "Nghỉ", ""));
+        exercises.add(new Exercise("Ngày 11: Nghỉ ngơi", "rest", "Nghỉ", "0s", "#E0E0E0", "Nghỉ", "https://youtu.be/ZToicYcHIOU"));
         exercises.add(new Exercise("Ngày 12: Đẩy vai", "shoulder", "3×10", "60s", "#4ECDC4", "Trung bình", "https://youtu.be/qEwKCR5JCog"));
-        exercises.add(new Exercise("Ngày 13: Nghỉ ngơi", "rest", "Nghỉ", "0s", "#E0E0E0", "Nghỉ", ""));
-        exercises.add(new Exercise("Ngày 14: Nghỉ ngơi", "rest", "Nghỉ", "0s", "#E0E0E0", "Nghỉ", ""));
+        exercises.add(new Exercise("Ngày 13: Nghỉ ngơi", "rest", "Nghỉ", "0s", "#E0E0E0", "Nghỉ", "https://youtu.be/v7AYKMP6rOE"));
+        exercises.add(new Exercise("Ngày 14: Nghỉ ngơi", "rest", "Nghỉ", "0s", "#E0E0E0", "Nghỉ", "https://youtu.be/1ZYbU82GVz4"));
         
         // TUẦN 3-4: TRUNG BÌNH (Ngày 15-28)
         // 4 ngày/tuần

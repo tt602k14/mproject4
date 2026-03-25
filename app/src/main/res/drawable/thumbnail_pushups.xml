@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background gradient -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#FF5722"
+                android:endColor="#D84315"
+                android:angle="135"/>
+            <corners android:radius="8dp"/>
+        </shape>
+    </item>
+    
+    <!-- Person doing push-up -->
+    <item android:gravity="center">
+        <vector
+            android:width="80dp"
+            android:height="80dp"
+            android:viewportWidth="24"
+            android:viewportHeight="24">
+            <path
+                android:fillColor="#FFFFFF"
+                android:pathData="M12,2c1.1,0 2,0.9 2,2s-0.9,2 -2,2 -2,-0.9 -2,-2 0.9,-2 2,-2zM6,10h12v2H6V10zM8,14h8v6H8V14z"/>
+        </vector>
+    </item>
+    
+    <!-- Movement arrows -->
+    <item android:gravity="center">
+        <vector
+            android:width="24dp"
+            android:height="24dp"
+            android:viewportWidth="24"
+            android:viewportHeight="24">
+            <path
+                android:fillColor="#80FFFFFF"
+                android:pathData="M12,4l-1.41,1.41L16.17,11H4v2h12.17l-5.58,5.59L12,20l8,-8z"/>
+        </vector>
+    </item>
+</layer-list>

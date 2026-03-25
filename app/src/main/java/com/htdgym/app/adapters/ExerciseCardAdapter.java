@@ -13,7 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.htdgym.app.R;
 import com.htdgym.app.models.Exercise;
-import com.htdgym.app.utils.YouTubeThumbnailHelper;
+import com.htdgym.app.utils.YouTubeHelper;
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 
@@ -98,26 +99,19 @@ public class ExerciseCardAdapter extends RecyclerView.Adapter<ExerciseCardAdapte
                 tvDifficulty.setTextColor(getDifficultyColor(exercise.getDifficulty()));
             }
             
-            // Load video thumbnail if available
-            if (ivThumbnail != null && exercise.getVideoUrl() != null && !exercise.getVideoUrl().isEmpty()) {
-                YouTubeThumbnailHelper.loadThumbnail(ivThumbnail, exercise.getVideoUrl(), "hqdefault");
+            // Load thumbnail image with improved logic
+            if (ivThumbnail != null) {
+                String thumbnailUrl = exercise.getThumbnailUrl();
+                String videoUrl = exercise.getVideoUrl();
+                String exerciseName = exercise.getName();
+                
+                // Use the new ThumbnailManager for better thumbnail loading
+                com.htdgym.app.utils.ThumbnailManager.loadThumbnail(
+                    itemView.getContext(), ivThumbnail, exerciseName, videoUrl);
+                
                 ivThumbnail.setVisibility(View.VISIBLE);
                 if (btnPlay != null) {
                     btnPlay.setVisibility(View.VISIBLE);
-                }
-            } else {
-                // Fallback to colored background
-                if (iconBg != null) {
-                    int color = getColorForMuscleGroup(exercise.getMuscleGroup());
-                    iconBg.setBackgroundColor(color);
-                    iconBg.setVisibility(View.VISIBLE);
-                }
-                
-                if (ivThumbnail != null) {
-                    ivThumbnail.setVisibility(View.GONE);
-                }
-                if (btnPlay != null) {
-                    btnPlay.setVisibility(View.GONE);
                 }
             }
             
@@ -180,6 +174,71 @@ public class ExerciseCardAdapter extends RecyclerView.Adapter<ExerciseCardAdapte
                 default:
                     return Color.parseColor("#666666");
             }
+        }
+        
+        private boolean isValidThumbnailUrl(String thumbnailUrl) {
+            return thumbnailUrl != null 
+                    && !thumbnailUrl.isEmpty() 
+                    && (thumbnailUrl.startsWith("https://i.ytimg.com/") 
+                        || thumbnailUrl.startsWith("https://img.youtube.com/"));
+        }
+        
+        private String generateThumbnailFromVideoUrl(String youtubeUrl) {
+            if (youtubeUrl == null || youtubeUrl.isEmpty()) return null;
+            
+            String videoId = extractVideoId(youtubeUrl);
+            if (videoId != null) {
+                // Use the same URL format as YouTubeHelper (i.ytimg.com)
+                return "https://i.ytimg.com/vi/" + videoId + "/hqdefault.jpg";
+            }
+            return null;
+        }
+        
+        private String extractVideoId(String youtubeUrl) {
+            if (youtubeUrl == null || youtubeUrl.isEmpty()) return null;
+            
+            try {
+                // Handle youtu.be format
+                if (youtubeUrl.contains("youtu.be/")) {
+                    String[] parts = youtubeUrl.split("youtu.be/");
+                    if (parts.length > 1) {
+                        String videoId = parts[1];
+                        if (videoId.contains("?")) {
+                            videoId = videoId.split("\\?")[0];
+                        }
+                        return videoId;
+                    }
+                }
+                
+                // Handle youtube.com format
+                if (youtubeUrl.contains("watch?v=")) {
+                    String[] parts = youtubeUrl.split("watch\\?v=");
+                    if (parts.length > 1) {
+                        String videoId = parts[1];
+                        if (videoId.contains("&")) {
+                            videoId = videoId.split("&")[0];
+                        }
+                        return videoId;
+                    }
+                }
+                
+                // Handle youtube.com/embed format
+                if (youtubeUrl.contains("/embed/")) {
+                    String[] parts = youtubeUrl.split("/embed/");
+                    if (parts.length > 1) {
+                        String videoId = parts[1];
+                        if (videoId.contains("?")) {
+                            videoId = videoId.split("\\?")[0];
+                        }
+                        return videoId;
+                    }
+                }
+                
+            } catch (Exception e) {
+                android.util.Log.e("ExerciseCardAdapter", "Error extracting video ID from: " + youtubeUrl, e);
+            }
+            
+            return null;
         }
     }
 }

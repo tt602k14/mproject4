@@ -1,6 +1,7 @@
 package com.htdgym.app.activities;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -273,13 +274,17 @@ public class AdminContentManagementActivity extends AppCompatActivity {
             .setItems(options, (dialog, which) -> {
                 switch (which) {
                     case 0:
-                        Toast.makeText(this, "Chức năng xem danh sách động tác", Toast.LENGTH_SHORT).show();
+                        // Navigate to full exercise management activity
+                        Intent intent = new Intent(this, AdminExerciseManagementActivity.class);
+                        startActivity(intent);
                         break;
                     case 1:
                         showAddExerciseDialog();
                         break;
                     case 2:
-                        Toast.makeText(this, "Chức năng sửa động tác", Toast.LENGTH_SHORT).show();
+                        // Navigate to exercise management for editing
+                        Intent editIntent = new Intent(this, AdminExerciseManagementActivity.class);
+                        startActivity(editIntent);
                         break;
                     case 3:
                         showDeleteConfirmDialog("động tác");

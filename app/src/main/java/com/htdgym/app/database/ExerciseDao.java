@@ -17,7 +17,7 @@ public interface ExerciseDao {
     LiveData<Exercise> getExerciseById(int id);
 
     @Insert
-    void insertExercise(Exercise exercise);
+    long insertExercise(Exercise exercise);
 
     @Insert
     void insertExercises(List<Exercise> exercises);
@@ -36,4 +36,30 @@ public interface ExerciseDao {
     
     @Query("SELECT * FROM exercises")
     List<Exercise> getAllExercisesList();
+    
+    // Synchronous version for admin management
+    @Query("SELECT * FROM exercises ORDER BY name ASC")
+    List<Exercise> getAllExercisesSync();
+    
+    // Additional methods for WorkoutsFragment
+    @Query("SELECT * FROM exercises WHERE isPremium = 0 OR :isPremiumUser = 1")
+    List<Exercise> getExercisesForUser(boolean isPremiumUser);
+    
+    @Query("SELECT COUNT(*) FROM exercises")
+    int getTotalExerciseCount();
+    
+    @Query("SELECT COUNT(*) FROM exercises WHERE isFavorite = 1")
+    int getFavoriteExerciseCount();
+    
+    @Query("SELECT SUM(completedCount) FROM exercises")
+    int getTotalCompletedCount();
+    
+    @Query("SELECT SUM(calories * completedCount) FROM exercises")
+    int getTotalCaloriesBurned();
+    
+    @Query("UPDATE exercises SET isFavorite = :isFavorite WHERE id = :exerciseId")
+    void updateFavoriteStatus(int exerciseId, boolean isFavorite);
+    
+    @Query("UPDATE exercises SET completedCount = completedCount + 1 WHERE id = :exerciseId")
+    void incrementCompletedCount(int exerciseId);
 }

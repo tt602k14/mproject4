@@ -606,10 +606,10 @@ public class WorkoutsFragment extends Fragment implements ExerciseAdapter.OnExer
         executor.execute(() -> {
             try {
                 // Check if exercises exist, if not create sample data
-                List<Exercise> exercises = database.exerciseDao().getAllExercises();
+                List<Exercise> exercises = database.exerciseDao().getAllExercisesList();
                 if (exercises.isEmpty()) {
                     createSampleExercises();
-                    exercises = database.exerciseDao().getAllExercises();
+                    exercises = database.exerciseDao().getAllExercisesList();
                 }
                 
                 // Filter exercises based on premium status
@@ -635,63 +635,63 @@ public class WorkoutsFragment extends Fragment implements ExerciseAdapter.OnExer
         
         // CHƯƠNG TRÌNH 30 NGÀY - Ngày 1-5: Khởi động cơ bản
         sampleExercises.add(new Exercise("Jumping Jacks", "Khởi động toàn thân", "all", "beginner", 30, 150, "https://youtu.be/c4DAnQ6DtF8"));
-        sampleExercises.add(new Exercise("Gập bụng cơ bản", "Tập cơ bụng trên", "abs", "beginner", 15, 80, "https://youtu.be/Xyd_fa5zoEU"));
-        sampleExercises.add(new Exercise("Plank", "Tăng cường core", "abs", "intermediate", 10, 60, "https://youtu.be/ASdvN_XEl_c"));
-        sampleExercises.add(new Exercise("Mountain Climbers", "Cardio và core", "abs", "advanced", 12, 150, "https://youtu.be/kLh-uczlPLg"));
-        sampleExercises.add(new Exercise("Leg Raises", "Tập cơ bụng dưới", "abs", "intermediate", 15, 110, "https://youtu.be/Xyd_fa5zoEU"));
+        sampleExercises.add(new Exercise("Gập bụng cơ bản", "Tập cơ bụng trên", "abs", "beginner", 15, 80, "https://youtu.be/1fbU_MkV7NE"));
+        sampleExercises.add(new Exercise("Plank", "Tăng cường core", "abs", "intermediate", 10, 60, "https://youtu.be/pSHjTRCQxIw"));
+        sampleExercises.add(new Exercise("Mountain Climbers", "Cardio và core", "abs", "advanced", 12, 150, "https://youtu.be/nmwgirgXLYM"));
+        sampleExercises.add(new Exercise("Leg Raises", "Tập cơ bụng dưới", "abs", "intermediate", 15, 110, "https://youtu.be/JB2oyawG9KI"));
         
         // Ngày 6-10: Tăng cường sức bền
         sampleExercises.add(new Exercise("Burpees", "Toàn thân và cardio", "all", "advanced", 10, 200, "https://youtu.be/JZQA08SlJnM"));
-        sampleExercises.add(new Exercise("Bicycle Crunches", "Cơ bụng chéo", "abs", "intermediate", 20, 120, "https://youtu.be/Xyd_fa5zoEU"));
-        sampleExercises.add(new Exercise("Side Plank", "Cơ bụng bên", "abs", "intermediate", 8, 80, "https://youtu.be/ASdvN_XEl_c"));
-        sampleExercises.add(new Exercise("Russian Twists", "Xoay thân", "abs", "intermediate", 20, 100, "https://youtu.be/Xyd_fa5zoEU"));
-        sampleExercises.add(new Exercise("High Knees", "Cardio cường độ cao", "all", "beginner", 30, 120, "https://youtu.be/c4DAnQ6DtF8"));
-        sampleExercises.add(new Exercise("Flutter Kicks", "Cơ bụng dưới", "abs", "intermediate", 20, 90, "https://youtu.be/Xyd_fa5zoEU"));
+        sampleExercises.add(new Exercise("Bicycle Crunches", "Cơ bụng chéo", "abs", "intermediate", 20, 120, "https://youtu.be/9FGilxCbdz8"));
+        sampleExercises.add(new Exercise("Side Plank", "Cơ bụng bên", "abs", "intermediate", 8, 80, "https://youtu.be/K2VljzCC16g"));
+        sampleExercises.add(new Exercise("Russian Twists", "Xoay thân", "abs", "intermediate", 20, 100, "https://youtu.be/wkD8rjkodUI"));
+        sampleExercises.add(new Exercise("High Knees", "Cardio cường độ cao", "all", "beginner", 30, 120, "https://youtu.be/8opcQdC-V-U"));
+        sampleExercises.add(new Exercise("Flutter Kicks", "Cơ bụng dưới", "abs", "intermediate", 20, 90, "https://youtu.be/ANVdMDaYRts"));
         
         // Ngày 11-15: Gập bụng cơ bản
-        sampleExercises.add(new Exercise("Crunches", "Gập bụng cơ bản", "abs", "beginner", 15, 80, "https://youtu.be/Xyd_fa5zoEU"));
-        sampleExercises.add(new Exercise("Reverse Crunches", "Gập bụng ngược", "abs", "intermediate", 12, 90, "https://www.youtube.com/watch?v=hyv14e2QDq0"));
-        sampleExercises.add(new Exercise("Toe Touches", "Chạm ngón chân", "abs", "beginner", 15, 70, "https://www.youtube.com/watch?v=4hmQA3snN3Q"));
-        sampleExercises.add(new Exercise("V-Ups", "Gập bụng chữ V", "abs", "advanced", 10, 120, "https://www.youtube.com/watch?v=iP2fjvG0g3w"));
-        sampleExercises.add(new Exercise("Dead Bug", "Ổn định core", "abs", "beginner", 12, 90, "https://www.youtube.com/watch?v=g_BYB0R-4Ws"));
-        sampleExercises.add(new Exercise("Heel Touches", "Chạm gót chân", "abs", "beginner", 20, 60, "https://www.youtube.com/watch?v=9bR-EL9yUeA"));
-        sampleExercises.add(new Exercise("Sit-ups", "Ngồi dậy cơ bản", "abs", "intermediate", 15, 100, "https://www.youtube.com/watch?v=1fbU_MkV7NE"));
+        sampleExercises.add(new Exercise("Crunches", "Gập bụng cơ bản", "abs", "beginner", 15, 80, "https://youtu.be/1fbU_MkV7NE"));
+        sampleExercises.add(new Exercise("Reverse Crunches", "Gập bụng ngược", "abs", "intermediate", 12, 90, "https://youtu.be/JB2oyawG9KI"));
+        sampleExercises.add(new Exercise("Toe Touches", "Chạm ngón chân", "abs", "beginner", 15, 70, "https://youtu.be/ANVdMDaYRts"));
+        sampleExercises.add(new Exercise("V-Ups", "Gập bụng chữ V", "abs", "advanced", 10, 120, "https://youtu.be/7UVgs18Y1P4"));
+        sampleExercises.add(new Exercise("Dead Bug", "Ổn định core", "abs", "beginner", 12, 90, "https://youtu.be/wiFNA3sqjCA"));
+        sampleExercises.add(new Exercise("Heel Touches", "Chạm gót chân", "abs", "beginner", 20, 60, "https://youtu.be/ANVdMDaYRts"));
+        sampleExercises.add(new Exercise("Sit-ups", "Ngồi dậy cơ bản", "abs", "intermediate", 15, 100, "https://youtu.be/1fbU_MkV7NE"));
         
         // Ngày 16-20: Plank và biến thể
-        sampleExercises.add(new Exercise("Plank 45s", "Plank cơ bản 45 giây", "abs", "intermediate", 1, 45, "https://youtu.be/ASdvN_XEl_c"));
-        sampleExercises.add(new Exercise("Plank to Downward Dog", "Plank động", "abs", "intermediate", 10, 80, "https://www.youtube.com/watch?v=F1RzP5g0yJk"));
-        sampleExercises.add(new Exercise("Plank Jacks", "Plank nhảy", "abs", "advanced", 15, 100, "https://www.youtube.com/watch?v=c4DAnQ6DtF8"));
-        sampleExercises.add(new Exercise("Shoulder Taps", "Chạm vai", "abs", "intermediate", 20, 90, "https://www.youtube.com/watch?v=gWHQpMUd2nA"));
-        sampleExercises.add(new Exercise("Plank Up-Downs", "Plank lên xuống", "abs", "advanced", 10, 120, "https://www.youtube.com/watch?v=E1IH5tZl8bE"));
+        sampleExercises.add(new Exercise("Plank 45s", "Plank cơ bản 45 giây", "abs", "intermediate", 1, 45, "https://youtu.be/pSHjTRCQxIw"));
+        sampleExercises.add(new Exercise("Plank to Downward Dog", "Plank động", "abs", "intermediate", 10, 80, "https://youtu.be/pSHjTRCQxIw"));
+        sampleExercises.add(new Exercise("Plank Jacks", "Plank nhảy", "abs", "advanced", 15, 100, "https://youtu.be/K2VljzCC16g"));
+        sampleExercises.add(new Exercise("Shoulder Taps", "Chạm vai", "abs", "intermediate", 20, 90, "https://youtu.be/1We3zKXj_uA"));
+        sampleExercises.add(new Exercise("Plank Up-Downs", "Plank lên xuống", "abs", "advanced", 10, 120, "https://youtu.be/pSHjTRCQxIw"));
         
         // CHƯƠNG TRÌNH 60 NGÀY - Nền tảng sức mạnh
         sampleExercises.add(new Exercise("Push-ups", "Hít đất cơ bản", "chest", "beginner", 15, 120, "https://youtu.be/IODxDxX7oi4"));
-        sampleExercises.add(new Exercise("Squats", "Squat cơ bản", "legs", "beginner", 20, 200, "https://youtu.be/YaXPRqUwItQ"));
+        sampleExercises.add(new Exercise("Squats", "Squat cơ bản", "legs", "beginner", 20, 200, "https://youtu.be/Xe1mCFljUN0"));
         sampleExercises.add(new Exercise("Lunges", "Lunge", "legs", "intermediate", 18, 180, "https://youtu.be/QOVaHwm-Q6U"));
-        sampleExercises.add(new Exercise("Dumbbell Rows", "Chèo tạ", "back", "intermediate", 15, 140, "https://www.youtube.com/watch?v=pYcpY20QaE8"));
+        sampleExercises.add(new Exercise("Dumbbell Rows", "Chèo tạ", "back", "intermediate", 15, 140, "https://youtu.be/cc7kIfSUWEY"));
         sampleExercises.add(new Exercise("Shoulder Press", "Đẩy vai", "shoulder", "intermediate", 18, 140, "https://youtu.be/qEwKCR5JCog"));
-        sampleExercises.add(new Exercise("Bicep Curls", "Cuốn tay", "shoulder", "beginner", 15, 100, "https://www.youtube.com/watch?v=ykJmrZ5v0Oo"));
+        sampleExercises.add(new Exercise("Bicep Curls", "Cuốn tay", "shoulder", "beginner", 15, 100, "https://youtu.be/3VcKaXpzqRo"));
         
         // Tập ngực và tay
-        sampleExercises.add(new Exercise("Incline Push-ups", "Hít đất nghiêng", "chest", "beginner", 20, 100, "https://youtu.be/IODxDxX7oi4"));
+        sampleExercises.add(new Exercise("Incline Push-ups", "Hít đất nghiêng", "chest", "beginner", 20, 100, "https://youtu.be/cfQBmpfjObs"));
         sampleExercises.add(new Exercise("Diamond Push-ups", "Hít đất kim cương", "chest", "advanced", 12, 150, "https://youtu.be/J0DnG1_S92I"));
-        sampleExercises.add(new Exercise("Tricep Extensions", "Duỗi tay sau", "shoulder", "intermediate", 15, 120, "https://www.youtube.com/watch?v=_gsUck-7M74"));
-        sampleExercises.add(new Exercise("Hammer Curls", "Cuốn tay búa", "shoulder", "intermediate", 12, 110, "https://www.youtube.com/watch?v=zC3nLlEvin4"));
+        sampleExercises.add(new Exercise("Tricep Extensions", "Duỗi tay sau", "shoulder", "intermediate", 15, 120, "https://youtu.be/qM5X-_FfCQE"));
+        sampleExercises.add(new Exercise("Hammer Curls", "Cuốn tay búa", "shoulder", "intermediate", 12, 110, "https://youtu.be/3VcKaXpzqRo"));
         
         // CHƯƠNG TRÌNH 90 NGÀY - Giai đoạn thích nghi
-        sampleExercises.add(new Exercise("Full Body Warm-up", "Khởi động toàn thân", "all", "beginner", 10, 100, "https://www.youtube.com/watch?v=UBMk30rjy0o"));
-        sampleExercises.add(new Exercise("Compound Movements", "Động tác phức hợp", "all", "advanced", 8, 180, "https://www.youtube.com/watch?v=U0bhE67HuDY"));
-        sampleExercises.add(new Exercise("Core Stability", "Ổn định core", "abs", "intermediate", 12, 120, "https://www.youtube.com/watch?v=DWmGArQBtFI"));
-        sampleExercises.add(new Exercise("Cardio Intervals", "Cardio ngắt quãng", "all", "advanced", 15, 200, "https://www.youtube.com/watch?v=ml6cT4AZdqI"));
-        sampleExercises.add(new Exercise("Flexibility Training", "Tăng độ dẻo", "all", "beginner", 10, 60, "https://www.youtube.com/watch?v=L_xrDAtykMI"));
+        sampleExercises.add(new Exercise("Full Body Warm-up", "Khởi động toàn thân", "all", "beginner", 10, 100, "https://youtu.be/8opcQdC-V-U"));
+        sampleExercises.add(new Exercise("Compound Movements", "Động tác phức hợp", "all", "advanced", 8, 180, "https://youtu.be/JZQA08SlJnM"));
+        sampleExercises.add(new Exercise("Core Stability", "Ổn định core", "abs", "intermediate", 12, 120, "https://youtu.be/pSHjTRCQxIw"));
+        sampleExercises.add(new Exercise("Cardio Intervals", "Cardio ngắt quãng", "all", "advanced", 15, 200, "https://youtu.be/c4DAnQ6DtF8"));
+        sampleExercises.add(new Exercise("Flexibility Training", "Tăng độ dẻo", "all", "beginner", 10, 60, "https://youtu.be/kqnua4rHVVA"));
         
         // Thêm các bài tập bổ sung
-        sampleExercises.add(new Exercise("Jump Rope", "Nhảy dây", "all", "intermediate", 30, 180, "https://www.youtube.com/watch?v=1BZM2Vre5oc"));
-        sampleExercises.add(new Exercise("Jumping Lunges", "Lunge nhảy", "legs", "advanced", 15, 160, "https://www.youtube.com/watch?v=3XDriUn0udo"));
-        sampleExercises.add(new Exercise("Wall Sit", "Ngồi tựa tường", "legs", "intermediate", 10, 120, "https://youtu.be/YaXPRqUwItQ"));
-        sampleExercises.add(new Exercise("Calf Raises", "Nâng bắp chân", "legs", "beginner", 25, 100, "https://youtu.be/YaXPRqUwItQ"));
-        sampleExercises.add(new Exercise("Superman", "Bài tập siêu nhân", "back", "beginner", 12, 90, "https://youtu.be/cc6UVRS7PW4"));
-        sampleExercises.add(new Exercise("Pull-ups", "Kéo xà", "back", "advanced", 10, 180, "https://youtu.be/eGo4IYlbE5g"));
+        sampleExercises.add(new Exercise("Jump Rope", "Nhảy dây", "all", "intermediate", 30, 180, "https://youtu.be/c4DAnQ6DtF8"));
+        sampleExercises.add(new Exercise("Jumping Lunges", "Lunge nhảy", "legs", "advanced", 15, 160, "https://youtu.be/A-cFYWvaHr0"));
+        sampleExercises.add(new Exercise("Wall Sit", "Ngồi tựa tường", "legs", "intermediate", 10, 120, "https://youtu.be/y-wV4Venusw"));
+        sampleExercises.add(new Exercise("Calf Raises", "Nâng bắp chân", "legs", "beginner", 25, 100, "https://youtu.be/gwLzBJYoWlI"));
+        sampleExercises.add(new Exercise("Superman", "Bài tập siêu nhân", "back", "beginner", 12, 90, "https://youtu.be/cc7kIfSUWEY"));
+        sampleExercises.add(new Exercise("Pull-ups", "Kéo xà", "back", "advanced", 10, 180, "https://youtu.be/HSoHeSjvIdY"));
         
         // Set additional properties
         for (Exercise exercise : sampleExercises) {
@@ -723,12 +723,12 @@ public class WorkoutsFragment extends Fragment implements ExerciseAdapter.OnExer
         premiumExercises.add(new Exercise("💎 Explosive Push-up Variations", "Biến thể hít đất bùng nổ", "chest", "advanced", 20, 280, "https://youtu.be/J0DnG1_S92I", true));
         
         // Premium Abs Workouts
-        premiumExercises.add(new Exercise("💎 6-Pack Destroyer", "Phá hủy mỡ bụng 6 múi", "abs", "advanced", 30, 350, "https://youtu.be/Xyd_fa5zoEU", true));
-        premiumExercises.add(new Exercise("💎 Core Shredder Pro", "Xé nát cơ core chuyên nghiệp", "abs", "advanced", 25, 320, "https://youtu.be/ASdvN_XEl_c", true));
+        premiumExercises.add(new Exercise("💎 6-Pack Destroyer", "Phá hủy mỡ bụng 6 múi", "abs", "advanced", 30, 350, "https://youtu.be/1fbU_MkV7NE", true));
+        premiumExercises.add(new Exercise("💎 Core Shredder Pro", "Xé nát cơ core chuyên nghiệp", "abs", "advanced", 25, 320, "https://youtu.be/pSHjTRCQxIw", true));
         
         // Premium Full Body
-        premiumExercises.add(new Exercise("💎 HIIT Beast Mode", "Chế độ quái vật HIIT", "all", "advanced", 35, 450, "https://www.youtube.com/watch?v=ml6cT4AZdqI", true));
-        premiumExercises.add(new Exercise("💎 Metabolic Meltdown", "Tan chảy trao đổi chất", "all", "advanced", 40, 500, "https://www.youtube.com/watch?v=U0bhE67HuDY", true));
+        premiumExercises.add(new Exercise("💎 HIIT Beast Mode", "Chế độ quái vật HIIT", "all", "advanced", 35, 450, "https://youtu.be/JZQA08SlJnM", true));
+        premiumExercises.add(new Exercise("💎 Metabolic Meltdown", "Tan chảy trao đổi chất", "all", "advanced", 40, 500, "https://youtu.be/c4DAnQ6DtF8", true));
         
         // Premium Legs
         premiumExercises.add(new Exercise("💎 Leg Annihilator", "Hủy diệt cơ chân", "legs", "advanced", 30, 380, "https://youtu.be/YaXPRqUwItQ", true));

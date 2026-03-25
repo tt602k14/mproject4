@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background gradient -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#3F51B5"
+                android:endColor="#283593"
+                android:angle="135"/>
+            <corners android:radius="8dp"/>
+        </shape>
+    </item>
+    
+    <!-- Person squatting -->
+    <item android:gravity="center">
+        <vector
+            android:width="80dp"
+            android:height="80dp"
+            android:viewportWidth="24"
+            android:viewportHeight="24">
+            <path
+                android:fillColor="#FFFFFF"
+                android:pathData="M12,2c1.1,0 2,0.9 2,2s-0.9,2 -2,2 -2,-0.9 -2,-2 0.9,-2 2,-2zM8,7h8v2H8V7zM9,11h6v4H9V11zM10,17h4v4h-4V17z"/>
+        </vector>
+    </item>
+    
+    <!-- Movement arrows -->
+    <item android:gravity="center">
+        <vector
+            android:width="60dp"
+            android:height="60dp"
+            android:viewportWidth="60"
+            android:viewportHeight="60">
+            <path
+                android:fillColor="#80FFFFFF"
+                android:pathData="M30,15 L25,20 L28,20 L28,40 L25,40 L30,45 L35,40 L32,40 L32,20 L35,20 Z"/>
+        </vector>
+    </item>
+    
+    <!-- Leg muscles indicator -->
+    <item android:gravity="bottom|center_horizontal" android:bottom="8dp">
+        <vector
+            android:width="32dp"
+            android:height="32dp"
+            android:viewportWidth="32"
+            android:viewportHeight="32">
+            <path
+                android:fillColor="#FFFF9800"
+                android:pathData="M12,8h8v16h-8V8zM10,10h2v12h-2V10zM20,10h2v12h-2V10z"/>
+        </vector>
+    </item>
+</layer-list>

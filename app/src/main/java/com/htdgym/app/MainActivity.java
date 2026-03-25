@@ -16,6 +16,8 @@ import com.htdgym.app.fragments.*;
 import com.htdgym.app.utils.AdminManager;
 import com.htdgym.app.utils.DefaultAccountManager;
 import com.htdgym.app.utils.PremiumManager;
+import com.htdgym.app.utils.ThumbnailUpdater;
+import com.htdgym.app.utils.YouTubeHelper;
 
 public class MainActivity extends AppCompatActivity {
     
@@ -152,6 +154,40 @@ public class MainActivity extends AppCompatActivity {
                 Log.e(TAG, "Error checking premium status", e);
             }
         });
+
+        // Update missing thumbnails in background
+        executeInBackground(() -> {
+            try {
+                // Debug log exercises first
+                ThumbnailUpdater.debugLogExercises(this);
+                
+                // Auto-fix all missing thumbnails (NEW!)
+                com.htdgym.app.utils.AutoThumbnailFixer.fixAllMissingThumbnails(this);
+                
+                // Download specific thumbnails for problematic exercises
+                com.htdgym.app.utils.ThumbnailDownloader.downloadSpecificThumbnails(this);
+                
+                // Force update all thumbnails to ensure they are properly generated
+                ThumbnailUpdater.forceUpdateAllThumbnails(this);
+                Log.d(TAG, "Force thumbnail update process started");
+                
+                // Debug log again after update
+                new Thread(() -> {
+                    try {
+                        Thread.sleep(3000); // Wait 3 seconds for updates to complete
+                        ThumbnailUpdater.debugLogExercises(this);
+                        
+                        // Test thumbnail URL generation
+                        testThumbnailGeneration();
+                    } catch (InterruptedException e) {
+                        Log.e(TAG, "Debug thread interrupted", e);
+                    }
+                }).start();
+                
+            } catch (Exception e) {
+                Log.e(TAG, "Error updating thumbnails", e);
+            }
+        });
     }
 
     private void executeInBackground(Runnable task) {
@@ -220,5 +256,40 @@ public class MainActivity extends AppCompatActivity {
             Log.e(TAG, "Failed to navigate to login", ex);
             finish();
         }
+    }
+    
+    private void testThumbnailGeneration() {
+        Log.d(TAG, "=== TESTING THUMBNAIL GENERATION ===");
+        
+        String[] testUrls = {
+            "https://youtu.be/IODxDxX7oi4",
+            "https://youtu.be/c4DAnQ6DtF8", 
+            "https://youtu.be/1fbU_MkV7NE",
+            "https://youtu.be/pSHjTRCQxIw",
+            "https://youtu.be/JZQA08SlJnM",
+            // Test the specific URLs user mentioned
+            "https://youtu.be/20Khkl95_qA",  // Tabata
+            "https://youtu.be/8opcQdC-V-U",  // Cardio
+            "https://www.youtube.com/watch?v=20Khkl95_qA",  // Tabata (full format)
+            "https://www.youtube.com/watch?v=8opcQdC-V-U"   // Cardio (full format)
+        };
+        
+        for (String url : testUrls) {
+            // Use the correct method name: extractVideoId instead of getVideoIdFromUrl
+            String videoId = YouTubeHelper.extractVideoId(url);
+            String thumbnailUrl = YouTubeHelper.getThumbnailUrl(url, YouTubeHelper.ThumbnailQuality.HIGH);
+            
+            Log.d(TAG, "URL: " + url);
+            Log.d(TAG, "Video ID: " + videoId);
+            Log.d(TAG, "Thumbnail: " + thumbnailUrl);
+            Log.d(TAG, "---");
+        }
+        
+        // Test direct thumbnail URLs
+        Log.d(TAG, "=== TESTING DIRECT THUMBNAIL ACCESS ===");
+        Log.d(TAG, "Cardio thumbnail: https://i.ytimg.com/vi/8opcQdC-V-U/hqdefault.jpg");
+        Log.d(TAG, "Tabata thumbnail: https://i.ytimg.com/vi/20Khkl95_qA/hqdefault.jpg");
+        
+        Log.d(TAG, "=== END THUMBNAIL TEST ===");
     }
 }

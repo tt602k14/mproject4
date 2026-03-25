@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background gradient -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#4ECDC4"
+                android:endColor="#26A69A"
+                android:angle="135"/>
+            <corners android:radius="8dp"/>
+        </shape>
+    </item>
+    
+    <!-- Legs icon -->
+    <item android:gravity="center">
+        <vector
+            android:width="80dp"
+            android:height="80dp"
+            android:viewportWidth="24"
+            android:viewportHeight="24">
+            <path
+                android:fillColor="#FFFFFF"
+                android:pathData="M8,7h8v2H8V7zM9,11h2v10h-2V11zM13,11h2v10h-2V11z"/>
+        </vector>
+    </item>
+    
+    <!-- Muscle groups -->
+    <item android:gravity="center">
+        <vector
+            android:width="40dp"
+            android:height="60dp"
+            android:viewportWidth="40"
+            android:viewportHeight="60">
+            <path
+                android:fillColor="#80FFFFFF"
+                android:pathData="M12,20h6v8h-6V20zM22,20h6v8h-6V20zM12,35h6v8h-6V35zM22,35h6v8h-6V35z"/>
+        </vector>
+    </item>
+</layer-list>

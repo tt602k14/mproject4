@@ -224,21 +224,21 @@ public class ProgramExerciseListActivity extends AppCompatActivity {
 
     private List<Exercise> getAbsBeginnerExercises() {
         List<Exercise> exercises = new ArrayList<>();
-        exercises.add(new Exercise("Gập bụng cơ bản", "abs", "3×15", "30s", "#9C27B0", "Dễ", "https://youtu.be/Y8VflnViz78"));
+        exercises.add(new Exercise("Gập bụng cơ bản", "abs", "3×15", "30s", "#9C27B0", "Dễ", "https://youtu.be/1fbU_MkV7NE"));
         exercises.add(new Exercise("Plank cơ bản", "abs", "3×30s", "45s", "#9C27B0", "Dễ", "https://youtu.be/pSHjTRCQxIw"));
         exercises.add(new Exercise("Nâng chân nằm", "abs", "3×12", "30s", "#9C27B0", "Dễ", "https://youtu.be/JB2oyawG9KI"));
         exercises.add(new Exercise("Gập bụng chéo", "abs", "3×20", "30s", "#9C27B0", "Trung bình", "https://youtu.be/9FGilxCbdz8"));
         exercises.add(new Exercise("Plank nghiêng", "abs", "2×20s", "45s", "#9C27B0", "Trung bình", "https://youtu.be/K2VljzCC16g"));
         exercises.add(new Exercise("Đá chân nhanh", "abs", "3×20s", "30s", "#9C27B0", "Dễ", "https://youtu.be/ANVdMDaYRts"));
         exercises.add(new Exercise("Leo núi", "abs", "3×20s", "30s", "#9C27B0", "Trung bình", "https://youtu.be/nmwgirgXLYM"));
-        exercises.add(new Exercise("Hollow Body Hold", "abs", "3×20s", "30s", "#9C27B0", "Trung bình", "https://youtu.be/LlDNef_Ztsc"));
-        exercises.add(new Exercise("Dead Bug", "abs", "3×10", "30s", "#9C27B0", "Dễ", "https://youtu.be/g_BYB0R-4Ws"));
-        exercises.add(new Exercise("Toe Touch Crunch", "abs", "3×15", "30s", "#9C27B0", "Dễ", "https://youtu.be/Y8VflnViz78"));
+        exercises.add(new Exercise("Hollow Body Hold", "abs", "3×20s", "30s", "#9C27B0", "Trung bình", "https://youtu.be/pSHjTRCQxIw"));
+        exercises.add(new Exercise("Dead Bug", "abs", "3×10", "30s", "#9C27B0", "Dễ", "https://youtu.be/wiFNA3sqjCA"));
+        exercises.add(new Exercise("Toe Touch Crunch", "abs", "3×15", "30s", "#9C27B0", "Dễ", "https://youtu.be/ANVdMDaYRts"));
         exercises.add(new Exercise("V-Up", "abs", "3×12", "30s", "#9C27B0", "Khó", "https://youtu.be/7UVgs18Y1P4"));
         exercises.add(new Exercise("Russian Twist", "abs", "3×20", "30s", "#9C27B0", "Trung bình", "https://youtu.be/wkD8rjkodUI"));
         exercises.add(new Exercise("Bicycle Crunch", "abs", "3×20", "30s", "#9C27B0", "Trung bình", "https://youtu.be/9FGilxCbdz8"));
-        exercises.add(new Exercise("Ab Wheel Rollout", "abs", "3×10", "45s", "#9C27B0", "Khó", "https://youtu.be/LlDNef_Ztsc"));
-        exercises.add(new Exercise("Dragon Flag", "abs", "3×6", "60s", "#9C27B0", "Khó", "https://youtu.be/LlDNef_Ztsc"));
+        exercises.add(new Exercise("Ab Wheel Rollout", "abs", "3×10", "45s", "#9C27B0", "Khó", "https://youtu.be/pSHjTRCQxIw"));
+        exercises.add(new Exercise("Dragon Flag", "abs", "3×6", "60s", "#9C27B0", "Khó", "https://youtu.be/pSHjTRCQxIw"));
         exercises.add(new Exercise("Hanging Knee Raise", "abs", "3×15", "45s", "#9C27B0", "Trung bình", "https://youtu.be/JB2oyawG9KI"));
         // Giãn cơ bụng
         exercises.add(new Exercise("🧘 Giãn cơ Cobra Stretch", "stretch", "2×30s", "15s", "#66BB6A", "Dễ", "https://youtu.be/JnHnd4SNKR8"));
@@ -251,12 +251,12 @@ public class ProgramExerciseListActivity extends AppCompatActivity {
         List<Exercise> exercises = new ArrayList<>();
         exercises.add(new Exercise("Burpees", "hiit", "3×10", "45s", "#E91E63", "Khó", "https://youtu.be/JZQA08SlJnM"));
         exercises.add(new Exercise("Squat nhảy", "legs", "3×15", "30s", "#FFA726", "Trung bình", "https://youtu.be/A-cFYWvaHr0"));
-        exercises.add(new Exercise("Hít đất", "chest", "3×12", "45s", "#FF6B6B", "Trung bình", "https://youtu.be/-R5sH2iG9Gw"));
+        exercises.add(new Exercise("Hít đất", "chest", "3×12", "45s", "#FF6B6B", "Trung bình", "https://youtu.be/IODxDxX7oi4"));
         exercises.add(new Exercise("Leo núi", "abs", "3×30s", "30s", "#9C27B0", "Trung bình", "https://youtu.be/nmwgirgXLYM"));
         exercises.add(new Exercise("Plank", "abs", "3×45s", "60s", "#9C27B0", "Trung bình", "https://youtu.be/pSHjTRCQxIw"));
         exercises.add(new Exercise("Bật nhảy", "hiit", "3×20", "30s", "#E91E63", "Dễ", "https://youtu.be/c4DAnQ6DtF8"));
         exercises.add(new Exercise("Chạy nâng đùi", "hiit", "3×30s", "30s", "#E91E63", "Trung bình", "https://youtu.be/8opcQdC-V-U"));
-        exercises.add(new Exercise("Gánh đùi", "legs", "3×20", "45s", "#FFA726", "Dễ", "https://youtu.be/XtoO9YwNEqA"));
+        exercises.add(new Exercise("Gánh đùi", "legs", "3×20", "45s", "#FFA726", "Dễ", "https://youtu.be/Xe1mCFljUN0"));
         return exercises;
     }
 
@@ -289,7 +289,7 @@ public class ProgramExerciseListActivity extends AppCompatActivity {
         exercises.add(new Exercise("Tabata Burpees", "hiit", "4×20s", "10s", "#E91E63", "Khó", "https://youtu.be/JZQA08SlJnM"));
         exercises.add(new Exercise("Tabata Squat", "legs", "4×20s", "10s", "#FFA726", "Trung bình", "https://youtu.be/A-cFYWvaHr0"));
         exercises.add(new Exercise("Tabata Leo núi", "abs", "4×20s", "10s", "#9C27B0", "Khó", "https://youtu.be/nmwgirgXLYM"));
-        exercises.add(new Exercise("Tabata Hít đất", "chest", "4×20s", "10s", "#FF6B6B", "Trung bình", "https://youtu.be/-R5sH2iG9Gw"));
+        exercises.add(new Exercise("Tabata Hít đất", "chest", "4×20s", "10s", "#FF6B6B", "Trung bình", "https://youtu.be/IODxDxX7oi4"));
         exercises.add(new Exercise("Tabata Bật nhảy", "hiit", "4×20s", "10s", "#E91E63", "Dễ", "https://youtu.be/c4DAnQ6DtF8"));
         exercises.add(new Exercise("Tabata Plank", "abs", "4×20s", "10s", "#9C27B0", "Trung bình", "https://youtu.be/pSHjTRCQxIw"));
         exercises.add(new Exercise("Tabata Chạy", "hiit", "4×20s", "10s", "#E91E63", "Dễ", "https://youtu.be/8opcQdC-V-U"));

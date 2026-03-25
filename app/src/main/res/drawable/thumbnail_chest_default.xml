@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background gradient -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#FF6B6B"
+                android:endColor="#E53E3E"
+                android:angle="135"/>
+            <corners android:radius="8dp"/>
+        </shape>
+    </item>
+    
+    <!-- Chest muscles icon -->
+    <item android:gravity="center">
+        <vector
+            android:width="80dp"
+            android:height="80dp"
+            android:viewportWidth="24"
+            android:viewportHeight="24">
+            <path
+                android:fillColor="#FFFFFF"
+                android:pathData="M12,2c1.1,0 2,0.9 2,2s-0.9,2 -2,2 -2,-0.9 -2,-2 0.9,-2 2,-2zM8,7h8v8H8V7z"/>
+        </vector>
+    </item>
+    
+    <!-- Muscle definition lines -->
+    <item android:gravity="center">
+        <vector
+            android:width="60dp"
+            android:height="60dp"
+            android:viewportWidth="60"
+            android:viewportHeight="60">
+            <path
+                android:fillColor="#80FFFFFF"
+                android:pathData="M20,25h20v2H20V25zM20,30h20v2H20V30zM20,35h20v2H20V35z"/>
+        </vector>
+    </item>
+</layer-list>

@@ -17,6 +17,7 @@ import androidx.fragment.app.Fragment;
 
 import com.htdgym.app.R;
 import com.htdgym.app.activities.WorkoutDetailActivity;
+import com.bumptech.glide.Glide;
 
 public class HomeFragment extends Fragment {
 
@@ -139,8 +140,8 @@ public class HomeFragment extends Fragment {
         // Featured image click - open YouTube video
         imgFeatured.setOnClickListener(v -> {
             String videoUrl = currentTab.equals("build_muscle") 
-                    ? "https://youtu.be/YTOGoC2HEf8" 
-                    : "https://youtu.be/GU5_SdDdc8o";
+                    ? "https://youtu.be/IODxDxX7oi4" 
+                    : "https://youtu.be/1fbU_MkV7NE";
             openYouTubeVideo(videoUrl);
         });
     }
@@ -157,7 +158,7 @@ public class HomeFragment extends Fragment {
         });
         
         // Load initial featured image for build muscle tab
-        com.htdgym.app.utils.YouTubeHelper.loadThumbnail(imgFeatured, "https://youtu.be/YTOGoC2HEf8", 
+        com.htdgym.app.utils.YouTubeHelper.loadThumbnail(imgFeatured, "https://youtu.be/IODxDxX7oi4", 
                 com.htdgym.app.utils.YouTubeHelper.ThumbnailQuality.HIGH);
     }
 
@@ -174,7 +175,7 @@ public class HomeFragment extends Fragment {
             tabIndicator.setLayoutParams(params);
             
             // Load featured image for build muscle
-            com.htdgym.app.utils.YouTubeHelper.loadThumbnail(imgFeatured, "https://youtu.be/YTOGoC2HEf8", 
+            com.htdgym.app.utils.YouTubeHelper.loadThumbnail(imgFeatured, "https://youtu.be/IODxDxX7oi4", 
                     com.htdgym.app.utils.YouTubeHelper.ThumbnailQuality.HIGH);
             
             loadBuildMusclePrograms();
@@ -547,9 +548,40 @@ public class HomeFragment extends Fragment {
                 LinearLayout.LayoutParams.MATCH_PARENT));
         thumbnail.setScaleType(ImageView.ScaleType.CENTER_CROP);
         
-        // Load YouTube thumbnail
-        com.htdgym.app.utils.YouTubeHelper.loadThumbnail(thumbnail, videoUrl, 
-                com.htdgym.app.utils.YouTubeHelper.ThumbnailQuality.MEDIUM);
+        // Load YouTube thumbnail with improved error handling
+        if (videoUrl != null && !videoUrl.isEmpty()) {
+            try {
+                // Debug log
+                android.util.Log.d("HomeFragment", "Loading thumbnail for: " + title + " | URL: " + videoUrl);
+                
+                // Try to load thumbnail using YouTubeHelper
+                com.htdgym.app.utils.YouTubeHelper.loadThumbnail(thumbnail, videoUrl, 
+                        com.htdgym.app.utils.YouTubeHelper.ThumbnailQuality.HIGH);
+                
+                // Fallback: If YouTubeHelper fails, try direct Glide loading
+                String videoId = com.htdgym.app.utils.YouTubeHelper.extractVideoId(videoUrl);
+                if (videoId != null) {
+                    String thumbnailUrl = "https://i.ytimg.com/vi/" + videoId + "/hqdefault.jpg";
+                    android.util.Log.d("HomeFragment", "Generated thumbnail URL: " + thumbnailUrl);
+                    
+                    // Load with Glide as backup
+                    com.bumptech.glide.Glide.with(requireContext())
+                        .load(thumbnailUrl)
+                        .placeholder(R.drawable.ic_image_placeholder)
+                        .error(R.drawable.ic_image_placeholder)
+                        .into(thumbnail);
+                } else {
+                    android.util.Log.e("HomeFragment", "Failed to extract video ID from: " + videoUrl);
+                    thumbnail.setImageResource(R.drawable.ic_image_placeholder);
+                }
+            } catch (Exception e) {
+                android.util.Log.e("HomeFragment", "Error loading thumbnail for: " + title, e);
+                thumbnail.setImageResource(R.drawable.ic_image_placeholder);
+            }
+        } else {
+            android.util.Log.w("HomeFragment", "No video URL for: " + title);
+            thumbnail.setImageResource(R.drawable.ic_image_placeholder);
+        }
         
         thumbnailCard.addView(thumbnail);
         
